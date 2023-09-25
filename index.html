@@ -7,15 +7,24 @@
 </head>
 <body>
     <h1>Plot Per Day Calculator</h1>
-    
     <!-- Formulir untuk memasukkan jumlah hari -->
     <form>
-        <label for="plotPerDay">Jumlah Hari:</label>
+        <label for="plotPerDay">Jumlah Plot/day:</label>
         <input type="number" id="plotPerDay" name="plotPerDay" min="1">
     </form>
 
-    <!-- Hasil kalkulasi akan ditampilkan di sini -->
-    <p id="hasilKalkulasi">Hasil kalkulasi:</p>
+    <!-- Hasil kalkulasi akan ditampilkan dalam tabel -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Periode</th>
+                <th>Hasil Kalkulasi</th>
+                <th>Size</th>
+            </tr>
+        </thead>
+        <tbody id="hasilKalkulasi">
+        </tbody>
+    </table>
 
     <script>
         // Dapatkan elemen input "plotPerDay" dan elemen tampilan hasil
@@ -27,21 +36,60 @@
             // Dapatkan nilai dari input
             var plotPerDayValue = parseFloat(plotPerDayInput.value);
 
-            // Lakukan kalkulasi berdasarkan jumlah hari
-            var jumlahHari = plotPerDayValue;
+            // Satu file berukuran 109 GB
+            var ukuranFileGB = 109;
 
-            // Kalkulasi untuk 1 Hari, 1 Minggu, 1 Bulan, dan 1 Tahun
-            var hasilHari = jumlahHari * 1; // PPD per hari
-            var hasilMinggu = jumlahHari * 7; // 1 minggu = 7 hari
-            var hasilBulan = jumlahHari * 30; // 1 bulan = 30 hari (asumsi)
-            var hasilTahun = jumlahHari * 365; // 1 tahun = 365 hari (asumsi)
+            // Kalkulasi Jumlah Plot untuk 1 Hari, 1 Minggu, 1 Bulan, dan 1 Tahun
+            var hasilHari = plotPerDayValue; // 70 adalah PPD per hari
+            var hasilMinggu = plotPerDayValue * 7; // 1 minggu = 7 hari
+            var hasilBulan = plotPerDayValue * 30; // 1 bulan = 30 hari (asumsi)
+            var hasilTahun = plotPerDayValue * 365; // 1 tahun = 365 hari (asumsi)
 
-            // Tampilkan hasil kalkulasi
-            hasilElement.innerHTML = "Hasil kalkulasi:<br>";
-            hasilElement.innerHTML += "1 Hari: " + hasilHari + "<br>";
-            hasilElement.innerHTML += "1 Minggu: " + hasilMinggu + "<br>";
-            hasilElement.innerHTML += "1 Bulan: " + hasilBulan + "<br>";
-            hasilElement.innerHTML += "1 Tahun: " + hasilTahun + "<br>";
+            // Kalkulasi Size Plot untuk 1 Hari, 1 Minggu, 1 Bulan, dan 1 Tahun
+            var TotalGBHari = hasilHari * ukuranFileGB;
+            var TotalGBMinggu = hasilMinggu * ukuranFileGB;
+            var TotalGBBulan = hasilBulan * ukuranFileGB;
+            var TotalGBTahun = hasilTahun * ukuranFileGB;
+
+            // Inisialisasi variabel untuk satuan hasil
+            var satuan = "GB";
+            function formatSize(value){
+                if(value >= 1000){
+                    value = value / 1000;
+                    satuan = "TB";
+                }else if(value > 1000000){
+                    value = value / 1000000;
+                    satuan = "PB";
+                }else{
+                    value = value;
+                    satuan = "GB";
+                }
+                return "~"+value+" "+satuan;
+            }
+
+            // Tampilkan hasil kalkulasi dalam tabel
+            hasilElement.innerHTML = `
+                <tr>
+                    <td>1 Hari</td>
+                    <td>${hasilHari}</td>
+                    <td>${formatSize(TotalGBHari)}</td>
+                </tr>
+                <tr>
+                    <td>1 Minggu</td>
+                    <td>${hasilMinggu}</td>
+                    <td>${formatSize(TotalGBMinggu)}</td>
+                </tr>
+                <tr>
+                    <td>1 Bulan</td>
+                    <td>${hasilBulan}</td>
+                    <td>${formatSize(TotalGBBulan)}</td>
+                </tr>
+                <tr>
+                    <td>1 Tahun</td>
+                    <td>${hasilTahun}</td>
+                    <td>${formatSize(TotalGBTahun)}</td>
+                </tr>
+            `;
         });
     </script>
 </body>
