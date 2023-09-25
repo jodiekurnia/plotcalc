@@ -6,80 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Plot Per Day Calculator</title>
     <link rel="icon" type="image/png" href="favicon.ico">
-    <link rel="icon" type="image/png" href="https://colorlib.com/etc/tb/Table_Responsive_v1/images/icons/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="src/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="src/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="src/animate.css">
-    <link rel="stylesheet" type="text/css" href="src/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="src/perfect-scrollbar.css">
-    <link rel="stylesheet" type="text/css" href="src/util.css">
     <link rel="stylesheet" type="text/css" href="src/main.css">
-    <meta name="robots" content="noindex, follow">
-    <script defer="" referrerpolicy="origin" src="src/s.js"></script>
-    <script type="text/javascript" async="" src="src/analytics.js" nonce="a1a3886f-9a62-417a-81f4-13b1a1141a3b"></script>
-    <script nonce="a1a3886f-9a62-417a-81f4-13b1a1141a3b">
-    (function(w, d) {
-            ! function(a, b, c, d) {
-                a[c] = a[c] || {};
-                a[c].executed = [];
-                a.zaraz = {
-                    deferred: [],
-                    listeners: []
-                };
-                a.zaraz.q = [];
-                a.zaraz._f = function(e) {
-                    return async function() {
-                        var f = Array.prototype.slice.call(arguments);
-                        a.zaraz.q.push({
-                            m: e,
-                            a: f
-                        })
-                    }
-                };
-                for (const g of ["track", "set", "debug"]) a.zaraz[g] = a.zaraz._f(g);
-                a.zaraz.init = () => {
-                    var h = b.getElementsByTagName(d)[0],
-                        i = b.createElement(d),
-                        j = b.getElementsByTagName("title")[0];
-                    j && (a[c].t = b.getElementsByTagName("title")[0].text);
-                    a[c].x = Math.random();
-                    a[c].w = a.screen.width;
-                    a[c].h = a.screen.height;
-                    a[c].j = a.innerHeight;
-                    a[c].e = a.innerWidth;
-                    a[c].l = a.location.href;
-                    a[c].r = b.referrer;
-                    a[c].k = a.screen.colorDepth;
-                    a[c].n = b.characterSet;
-                    a[c].o = (new Date).getTimezoneOffset();
-                    if (a.dataLayer)
-                        for (const n of Object.entries(Object.entries(dataLayer).reduce(((o, p) => ({
-                                ...o[1],
-                                ...p[1]
-                            })), {}))) zaraz.set(n[0], n[1], {
-                            scope: "page"
-                        });
-                    a[c].q = [];
-                    for (; a.zaraz.q.length;) {
-                        const q = a.zaraz.q.shift();
-                        a[c].q.push(q)
-                    }
-                    i.defer = !0;
-                    for (const r of [localStorage, sessionStorage]) Object.keys(r || {}).filter((t => t.startsWith("_zaraz_"))).forEach((s => {
-                        try {
-                            a[c]["z_" + s.slice(7)] = JSON.parse(r.getItem(s))
-                        } catch {
-                            a[c]["z_" + s.slice(7)] = r.getItem(s)
-                        }
-                    }));
-                    i.referrerPolicy = "origin";
-                    i.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(a[c])));
-                    h.parentNode.insertBefore(i, h)
-                };
-                ["complete", "interactive"].includes(b.readyState) ? zaraz.init() : a.addEventListener("DOMContentLoaded", zaraz.init)
-            }(w, d, "zarazData", "script");
-        })(window, document);
-</script>
 </head>
 <body>
     <h1>Plot Per Day Calculator</h1>
@@ -90,38 +17,25 @@
     </form>
 
     <!-- Hasil kalkulasi akan ditampilkan dalam tabel -->
-    <div class="limiter">
-        <div class="container-table100">
-            <div class="wrap-table100">
-                <div class="table100">
-                    <table>
-                        <thead>
-                            <tr class="table100-head">
-                            <th class="column1">Periode</th>
-                            <th class="column2">Jumlah Plot</th>
-                            <th class="column3">Size</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-            </div>
-        </div>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                <th>Periode</th>
+                <th>Jumlah Plot</th>
+                <th>Size</th>
+                </tr>
+            </thead>
+        </table>
     </div>
-    <script src="src/jquery-3.2.1.min.js"></script>
-    <script src="src/popper.js"></script>
-    <script src="src/bootstrap.min.js"></script>
-    <script src="src/select2.min.js"></script>
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody id="hasilKalkulasi">
+
+            </tbody>
+        </table>
+    </div>
     <script src="src/main.js"></script>
-    <script async="" src="src/js"></script>
-    <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-    
-          gtag('config', 'UA-23581568-13');
-        </script>
-    <script defer="" src="src/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon="{&quot;rayId&quot;:&quot;80c2d4858d7eab4a&quot;,&quot;token&quot;:&quot;cd0b4b3a733644fc843ef0b185f98241&quot;,&quot;version&quot;:&quot;2023.8.0&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
-    
     <script>
         // Dapatkan elemen input "plotPerDay" dan elemen tampilan hasil
         var plotPerDayInput = document.getElementById("plotPerDay");
@@ -186,5 +100,12 @@
             `;
         });
     </script>
+    <!-- follow me template -->
+    <div class="made-with-love">
+        Made with
+        <i>♥</i> by <a target="_blank" href="https://github.com/jodiekurnia">Jodie Kurnia</a>
+        HTML Template by 
+        <a target="_blank" href="https://codepen.io/nikhil8krishnan">Nikhil Krishnan</a>
+    </div>
 </body>
 </html>
