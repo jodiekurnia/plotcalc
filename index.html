@@ -13,7 +13,7 @@
     <!-- Formulir untuk memasukkan jumlah hari -->
     <form>
         <div class="label">
-            <label for="plotPerDay">Jumlah Plot/day:</label>
+            <label for="plotPerDay">Chia Plot/day:</label>
             <input type="number" id="plotPerDay" name="plotPerDay" min="1">
         </div>
     </form>
@@ -24,7 +24,7 @@
             <thead>
                 <tr>
                 <th>Periode</th>
-                <th>Jumlah Plot</th>
+                <th>Plot Count</th>
                 <th>Size</th>
                 </tr>
             </thead>
@@ -84,32 +84,32 @@
             // Tampilkan hasil kalkulasi dalam tabel
             hasilElement.innerHTML = `
                 <tr>
-                    <td>1 Hari</td>
+                    <td>1 Day</td>
                     <td">${hasilHari}</td>
                     <td">${formatSize(TotalGBHari)}</td>
                 </tr>
                 <tr>
-                    <td>1 Minggu</td>
+                    <td>1 Week</td>
                     <td">~ ${hasilMinggu}</td>
                     <td">~ ${formatSize(TotalGBMinggu)}</td>
                 </tr>
                 <tr>
-                    <td>1 Bulan</td>
+                    <td>1 Month</td>
                     <td">~ ${hasilBulan}</td>
                     <td">~ ${formatSize(TotalGBBulan)}</td>
                 </tr>
                 <tr>
-                    <td>3 Bulan</td>
+                    <td>3 Month</td>
                     <td">~ ${hasil3Bulan}</td>
                     <td">~ ${formatSize(TotalGB3Bulan)}</td>
                 </tr>
                 <tr>
-                    <td>6 Bulan</td>
+                    <td>6 Month</td>
                     <td">~ ${hasil6Bulan}</td>
                     <td">~ ${formatSize(TotalGB6Bulan)}</td>
                 </tr>
                 <tr>
-                    <td>1 Tahun</td>
+                    <td>1 Year</td>
                     <td">~ ${hasilTahun}</td>
                     <td">~ ${formatSize(TotalGBTahun)}</td>
                 </tr>
