@@ -55,12 +55,16 @@
             var hasilHari = plotPerDayValue; // 70 adalah PPD per hari
             var hasilMinggu = plotPerDayValue * 7; // 1 minggu = 7 hari
             var hasilBulan = plotPerDayValue * 30; // 1 bulan = 30 hari (asumsi)
+            var hasil3Bulan = plotPerDayValue * 90; // 1 bulan = 30 hari (asumsi)
+            var hasil6Bulan = plotPerDayValue * 180; // 1 bulan = 30 hari (asumsi)
             var hasilTahun = plotPerDayValue * 365; // 1 tahun = 365 hari (asumsi)
 
             // Kalkulasi Size Plot untuk 1 Hari, 1 Minggu, 1 Bulan, dan 1 Tahun
             var TotalGBHari = hasilHari * ukuranFileGB;
             var TotalGBMinggu = hasilMinggu * ukuranFileGB;
             var TotalGBBulan = hasilBulan * ukuranFileGB;
+            var TotalGB3Bulan = hasil3Bulan * ukuranFileGB;
+            var TotalGB6Bulan = hasil6Bulan * ukuranFileGB;
             var TotalGBTahun = hasilTahun * ukuranFileGB;
 
             // Inisialisasi variabel untuk satuan hasil
@@ -74,30 +78,40 @@
                     value /= 1000;
                     satuan = "PB";
                 }
-                return "~"+value.toFixed(2)+" "+satuan;
+                return value.toFixed(2)+" "+satuan;
             }
 
             // Tampilkan hasil kalkulasi dalam tabel
             hasilElement.innerHTML = `
                 <tr>
-                    <td class="column1">1 Hari</td>
-                    <td class="column2">${hasilHari}</td>
-                    <td class="column3">${formatSize(TotalGBHari)}</td>
+                    <td>1 Hari</td>
+                    <td">${hasilHari}</td>
+                    <td">${formatSize(TotalGBHari)}</td>
                 </tr>
                 <tr>
-                    <td class="column1">1 Minggu</td>
-                    <td class="column2">${hasilMinggu}</td>
-                    <td class="column3">${formatSize(TotalGBMinggu)}</td>
+                    <td>1 Minggu</td>
+                    <td">~ ${hasilMinggu}</td>
+                    <td">~ ${formatSize(TotalGBMinggu)}</td>
                 </tr>
                 <tr>
-                    <td class="column1">1 Bulan</td>
-                    <td class="column2">${hasilBulan}</td>
-                    <td class="column3">${formatSize(TotalGBBulan)}</td>
+                    <td>1 Bulan</td>
+                    <td">~ ${hasilBulan}</td>
+                    <td">~ ${formatSize(TotalGBBulan)}</td>
                 </tr>
                 <tr>
-                    <td class="column1">1 Tahun</td>
-                    <td class="column2">${hasilTahun}</td>
-                    <td class="column3">${formatSize(TotalGBTahun)}</td>
+                    <td>3 Bulan</td>
+                    <td">~ ${hasil3Bulan}</td>
+                    <td">~ ${formatSize(TotalGB3Bulan)}</td>
+                </tr>
+                <tr>
+                    <td>6 Bulan</td>
+                    <td">~ ${hasil6Bulan}</td>
+                    <td">~ ${formatSize(TotalGB6Bulan)}</td>
+                </tr>
+                <tr>
+                    <td>1 Tahun</td>
+                    <td">~ ${hasilTahun}</td>
+                    <td">~ ${formatSize(TotalGBTahun)}</td>
                 </tr>
             `;
         });
