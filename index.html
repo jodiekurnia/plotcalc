@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plot Calculator</title>
+    <script>
+        // Dapatkan elemen input "plotPerDay"
+        var plotPerDayInput = document.getElementById("plotPerDay");
+    
+        // Tambahkan event listener untuk memantau perubahan
+        plotPerDayInput.addEventListener("input", function() {
+            // Dapatkan nilai dari input
+            var plotPerDayValue = parseFloat(plotPerDayInput.value);
+    
+            // Lakukan kalkulasi di sini (misalnya, kalikan dengan 10)
+            var hasilKalkulasi = plotPerDayValue * 10;
+    
+            // Tampilkan hasil kalkulasi (misalnya, dalam sebuah elemen)
+            var hasilElement = document.getElementById("hasilKalkulasi");
+            hasilElement.textContent = "Hasil kalkulasi: " + hasilKalkulasi;
+        });
+    </script>
+</head>
+<body>
+    <h1>Plot Per Day</h1>
+    <form action="#">
+        <label for="plotPerDay">Plot Per Day:</label>
+        <input type="text" id="plotPerDay" name="plotPerDay">
+    </form>
+    <p id="hasilKalkulasi"></p>
+</body>
+</html>
