@@ -3,12 +3,12 @@
   box-sizing: border-box;
 }
 h1{
-    font-size: 30px;
+    font-size: 50px;
     color: #fff;
     text-transform: uppercase;
     font-weight: 300;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 .label{
   font-size: 30px;
