@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plot Calculator</title>
+    
+</head>
+<body>
+    <h1>Plot Calculator</h1>
+    <form action="#">
+        <label id="plotPerDay">Plot Per Day:</label>
+        <input type="text" id="plotPerDay" name="plotPerDay">
+    </form>
+    <p id="hasilKalkulasi"></p>
     <script>
         // Dapatkan elemen input "plotPerDay"
         var plotPerDayInput = document.getElementById("plotPerDay");
@@ -21,13 +30,5 @@
             hasilElement.textContent = "Hasil kalkulasi: " + hasilKalkulasi;
         });
     </script>
-</head>
-<body>
-    <h1>Plot Per Day</h1>
-    <form action="#">
-        <label id="plotPerDay">Plot Per Day:</label>
-        <input type="text" id="plotPerDay" name="plotPerDay">
-    </form>
-    <p id="hasilKalkulasi"></p>
 </body>
 </html>
