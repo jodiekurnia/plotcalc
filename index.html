@@ -18,7 +18,7 @@
         <thead>
             <tr>
                 <th>Periode</th>
-                <th>Hasil Kalkulasi</th>
+                <th>Jumlah Plot</th>
                 <th>Size</th>
             </tr>
         </thead>
@@ -62,7 +62,7 @@
                     value /= 1000;
                     satuan = "PB";
                 }
-                return "~"+value+" "+satuan;
+                return "~"+value.toFixed(2)+" "+satuan;
             }
 
             // Tampilkan hasil kalkulasi dalam tabel
