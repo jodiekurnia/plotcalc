@@ -52,17 +52,15 @@
             var TotalGBTahun = hasilTahun * ukuranFileGB;
 
             // Inisialisasi variabel untuk satuan hasil
-            var satuan = "GB";
             function formatSize(value){
-                if(value >= 1000){
-                    value = value / 1000;
+                var satuan = "GB";
+                if (value >= 1000) {
+                    value /= 1000;
                     satuan = "TB";
-                }else if(value > 1000000){
-                    value = value / 1000000;
+                }
+                if (value >= 1000) {
+                    value /= 1000;
                     satuan = "PB";
-                }else{
-                    value = value;
-                    satuan = "GB";
                 }
                 return "~"+value+" "+satuan;
             }
